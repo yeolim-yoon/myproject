@@ -1,41 +1,78 @@
-baseurl: https://example.com/
-languageCode: en
-title: Title
-theme: hyde-hyde
-params:
-  author: Author
-  authorimage: /img/hugo.png
-  copyright: htr3n
-  dateformat: Jan 2, 2006
-  highlightjs: yes
-  highlightjsstyle: github
-  license: CC BY-SA 4.0
-  licenseURL: https://creativecommons.org/licenses/by-sa/4.0
-  showBuiltWith: yes
-  since: 2019
-  social:
-    email: your-email@example.com
-    facebook: <username>
-    github: <username>
-    instagram: <username>
-    linkedin: <username>
-    microblog: <username>
-    stackoverflow: <username>
-    telegram: <username>
-    twitter: <username>
-    xing: <username>
-  title: Title
-menu:
-  main:
-    - identifier: posts
-      name: Posts
-      url: /posts/
+theme: "starter-hugo-academic"
+# Configuration of Hugo
+# Guide: https://wowchemy.com/docs/getting-started/
+# Hugo Documentation: https://gohugo.io/getting-started/configuration/#all-configuration-settings
+# This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
+
+title: Academic # Website name
+baseurl: '' # Website URL
+copyright: '' # Footer text, e.g. '© {year} Me'
+
+############################
+## LANGUAGE
+############################
+
+defaultContentLanguage: en
+hasCJKLanguage: false
+defaultContentLanguageInSubdir: false
+removePathAccents: true
+
+############################
+## MODULES
+############################
+
+module:
+  imports:
+    - path: github.com/wowchemy/wowchemy-hugo-modules/wowchemy-cms
+    - path: github.com/wowchemy/wowchemy-hugo-modules/wowchemy
+
+############################
+## ADVANCED
+############################
+
+enableGitInfo: false
+summaryLength: 30
+paginate: 10
+enableEmoji: true
+enableRobotsTXT: true
+footnotereturnlinkcontents: <sup>^</sup>
+ignoreFiles: [\.ipynb$, .ipynb_checkpoints$, \.Rmd$, \.Rmarkdown$, _cache$]
+permalinks:
+  event: '/talk/:slug/'
+  authors: '/author/:slug/'
+  tags: '/tag/:slug/'
+  categories: '/category/:slug/'
+  publication_types: '/publication-type/:slug/'
+disableAliases: true
+outputs:
+  home: [HTML, RSS, JSON, WebAppManifest, headers, redirects]
+  section: [HTML, RSS]
+markup:
+  defaultMarkdownHandler: goldmark
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    codeFences: false
+  tableOfContents:
+    startLevel: 2
+    endLevel: 3
+imaging:
+  resampleFilter: lanczos
+  quality: 75
+  anchor: smart
+timeout: 600000
+taxonomies:
+  tag: tags
+  category: categories
+  publication_type: publication_types
+  author: authors
+related:
+  threshold: 80
+  includeNewer: true
+  toLower: true
+  indices:
+    - name: tags
       weight: 100
-    - identifier: portfolio
-      name: Portfolio
-      url: /portfolio/
-      weight: 200
-    - identifier: about
-      name: About
-      url: /about/
-      weight: 300
+    - name: categories
+      weight: 70

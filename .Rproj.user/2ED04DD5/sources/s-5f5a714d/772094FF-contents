@@ -1,0 +1,45 @@
+if(!require(jsonlite)) install.packages('jsonlite')
+if(!require(ggmap))    install.packages('ggmap')
+if(!require(ggplot2))  install.packages('ggplot2')
+library(jsonlite)
+library(ggmap)
+library(ggplot2)
+library(tidyverse)
+
+#map_data = fromJSON("data/Takeout/Location History/Location History.json")
+
+#map_data$locations
+
+locations = map_data$locations
+loc_dat1 =  locations %>%
+  mutate(lat = latitudeE7/1e7, 
+         lng = longitudeE7/1e7) %>%
+  mutate(year = str_sub(timestampMs, 1, 2), 
+         month= str_sub(timestampMs, 3, 4))
+
+loc_dat_sample = loc_dat1 %>%
+  slice(1:50000)
+
+library(leaflet)
+popu = c("korea")
+lng  = loc_dat_sample$lng
+lat  = loc_dat_sample$lat
+
+leaflet() %>%
+  setView(lng = 126.91, 
+          lat = 37.56, 
+          zoom = 13) %>%
+  addTiles()
+
+
+leaflet(loc_dat_sample) %>%
+  setView(lng = 126.91, 
+          lat = 37.56, 
+          zoom = 13) %>%
+  addTiles() %>%
+  #addMarkers(lng = lng, lat = lat)
+  addCircleMarkers(lng = lng, lat = lat, 
+                   radius = 2, 
+                   color  = "red", 
+                   stroke = FALSE, 
+                   fillOpacity = 0.5)
