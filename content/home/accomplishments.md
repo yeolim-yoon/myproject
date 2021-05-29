@@ -23,29 +23,29 @@ date_format: Jan 2006
 #   Leave other parameters empty if not required.
 #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
 item:
-- certificate_url: https://www.coursera.org
+- certificate_url: 
   date_end: ""
-  date_start: "2021-01-25"
+  date_start: "2021-05-01"
   description: ""
-  organization: Coursera
-  organization_url: https://www.coursera.org
-  title: Neural Networks and Deep Learning
+  organization: SSK (Social Sciences Korea)
+  organization_url: http://sskn.kr/
+  title: Award in Social Scientist Academic Contest
   url: ""
-- certificate_url: https://www.edx.org
+- certificate_url:
   date_end: ""
-  date_start: "2021-01-01"
-  description: Formulated informed blockchain models, hypotheses, and use cases.
-  organization: edX
-  organization_url: https://www.edx.org
-  title: Blockchain Fundamentals
-  url: https://www.edx.org/professional-certificate/uc-berkeleyx-blockchain-fundamentals
-- certificate_url: https://www.datacamp.com
-  date_end: "2020-12-21"
-  date_start: "2020-07-01"
+  date_start: "2019-12-01"
   description: ""
-  organization: DataCamp
-  organization_url: https://www.datacamp.com
-  title: 'Object-Oriented Programming in R'
+  organization: Korea Management Association (KMAC)
+  organization_url: https://www.kmac.co.kr/contest/contest_history.asp?searchtext=&year=2019
+  title: KMAC prize (with $500)
+  url: ""
+- certificate_url: 
+  date_end: ""
+  date_start: "2018-11-01"
+  description: ""
+  organization: Korean Scholars of Marketing Science
+  organization_url: http://www.gamma20.org/sub04_03.html
+  title: 'Global Business Review Competition, 1st prize (with $1,000)'
   url: ""
 
 design:

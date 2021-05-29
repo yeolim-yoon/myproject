@@ -1,52 +1,37 @@
 ---
-bio: My research interests include distributed robotics, mobile computing and programmable
+bio: My research interests include digital marketing, B2B and log data analysis
   matter.
 education:
   courses:
-  - course: PhD in Artificial Intelligence
-    institution: Stanford University
-    year: 2012
-  - course: MEng in Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    year: 2009
-  - course: BSc in Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    year: 2008
+  - course: MS in Marketing
+    institution: Yonsei University
+    year: 2021
+  - course: BA (Summa cum laude)
+    institution: Hanyang University
+    year: 2018
 email: ""
 highlight_name: false
 interests:
-- Artificial Intelligence
-- Computational Linguistics
-- Information Retrieval
+- Quantitative Marketing
+- Log data Analysis
+- Information Systems
 organizations:
-- name: Stanford University
-  url: https://www.stanford.edu/
-role: Professor of Artificial Intelligence
+- name: Yonsei University
+  url: https://ysb.yonsei.ac.kr/faculty.asp?mid=m02&sOpt=&uid=92
+role: Graduate Student
 social:
-- icon: envelope
-  icon_pack: fas
-  link: /#contact
 - display:
     header: true
-  icon: twitter
-  icon_pack: fab
-  label: Follow me on Twitter
-  link: https://twitter.com/GeorgeCushen
-- icon: graduation-cap
-  icon_pack: fas
-  link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ
 - icon: github
   icon_pack: fab
-  link: https://github.com/gcushen
+  link: https://github.com/yeolim-yoon
 - icon: linkedin
   icon_pack: fab
-  link: https://www.linkedin.com/
+  link: https://www.linkedin.com/in/yeolim-yoon
 superuser: true
-title: Nelson Bighetti
+title: Yeo Lim Yoon
 ---
 
-Nelson Bighetti is a professor of artificial intelligence at the Stanford AI Lab. His research interests include distributed robotics, mobile computing and programmable matter. He leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate.
+Yeo Lim Yoon is a Graduate Student at the School of Business, Yonsei University. Her research interest lies in B2B, digital marketing, log data analytics, and mobile marketing. She has published in journals such as the Industrial Marketing Management and Knowledge Management Research.
 
 {{< icon name="download" pack="fas" >}} Download my {{< staticref "uploads/demo_resume.pdf" "newtab" >}}resumé{{< /staticref >}}.

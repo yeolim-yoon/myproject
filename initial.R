@@ -4,7 +4,9 @@
 library(blogdown)
 install_hugo()
 # remember hugo version
-#v0.83.1
+#v.0.83.1
+new_site(theme = "wowchemy/starter-academic")
 
-new_site(theme = "htr3n/hyde-hyde")
 serve_site()
+
+
