@@ -7,3 +7,4 @@ git commit -m "first blog commit"
 git status
 git log
 git push origin main
+
