@@ -5,7 +5,7 @@ account: yeolim-yoon
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 4273048
-bundleId: 4717580
+bundleId: 4717774
 url: https://yeolim-yoon.shinyapps.io/covid19/
-when: 1623734103.47399
-lastSyncTime: 1623734103.474
+when: 1623739275.09986
+lastSyncTime: 1623739275.09987
