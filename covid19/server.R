@@ -84,3 +84,5 @@ server <- function(input, output){
                                         addMiniMap() %>% addMarkers(lng = ~lng, lat = ~lat, 
                                                    clusterOptions = markerClusterOptions(),  popup = paste(area_map2$area,"<br>" ,area_map2$inf_route)) })
 } 
+
+shiny::runApp()
