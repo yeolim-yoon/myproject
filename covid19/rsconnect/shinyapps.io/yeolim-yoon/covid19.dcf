@@ -1,0 +1,11 @@
+name: covid19
+title:
+username:
+account: yeolim-yoon
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 4273048
+bundleId: 4717580
+url: https://yeolim-yoon.shinyapps.io/covid19/
+when: 1623734103.47399
+lastSyncTime: 1623734103.474

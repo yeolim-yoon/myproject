@@ -7,8 +7,8 @@ if(!require(shinydashboard)) install.packages('shinydashboard'); library(shinyda
 if(!require(shinyWidgets)) install.packages('shinyWidgets'); library(shinyWidgets)
 if(!require(tidyverse)) install.packages('tidyverse'); library(tidyverse)
 if(!require(readxl)) install.packages('readxl'); library(readxl)
-library('tidyverse')
-library('leaflet')
+if(!require(tidyverse)) install.packages('tidyverse'); library('tidyverse')
+if(!require(leaflet)) install.packages('leaflet'); library('leaflet')
 
 #ui, dashboardPage, [header, sidebar, body ]
 ui = dashboardPage(

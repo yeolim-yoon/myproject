@@ -1,5 +1,6 @@
 #data import
-library(readxl)
+if(!require(tidyverse)) install.packages('tidyverse'); library(tidyverse)
+if(!require(readxl)) install.packages('readxl'); library(readxl)
 
 covid_cases_by_date <- read_excel("covid_cases_by_date.xlsx")
 covid_cases_cum_by_area <- read_excel("covid_cases_cum_by_area.xlsx")
@@ -73,6 +74,7 @@ regi_label = covid_cases_cum_by_area2 %>%
   pull('area_eng') 
 
 
+library(leaflet)
 ##############지도
 
 dif_color = colorFactor('Set1', area$cases)

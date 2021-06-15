@@ -1,5 +1,6 @@
 library(shiny)
 library(ggplot2)
+library(leaflet)
 
 server <- function(input, output){
   output$table1 = DT::renderDataTable({covid_seoul})
