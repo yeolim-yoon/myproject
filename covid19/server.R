@@ -1,6 +1,7 @@
 library(shiny)
 library(ggplot2)
 library(leaflet)
+library(tidyverse)
 
 server <- function(input, output){
   output$table1 = DT::renderDataTable({covid_seoul})
@@ -20,7 +21,7 @@ server <- function(input, output){
   
   output$date_plot <- renderPlot({  
     plot(covid_cases_by_date2$date1, covid_cases_by_date2$n_cum,  
-         main="Covid Cases in Seoul_ by Date", xlab = "Date", ylab="Cumulated cases (Seoul)", type="p", pch=20,  col="pink")  })
+         main="Covid Cases in Seoul_ by Date", xlab = "Date passed from the first case (D+)", ylab="Cumulated cases (Seoul)", type="p", pch=20,  col="pink")})
   output$cum_area_plot <- renderPlot({
     ggplot(data= data.frame("Area"= covid_cases_cum_by_area2$area2, "n_cum"=covid_cases_cum_by_area2$n_cum), 
            aes(x= covid_cases_cum_by_area2$area2, y = covid_cases_cum_by_area2$n_cum)) + 
@@ -57,14 +58,22 @@ server <- function(input, output){
   
   output$map_route <- renderPlot({ggplot(data = area_map2, mapping = aes(x = inf_route2, fill = inf_route2)) + 
       geom_bar(width = 1, show.legend = FALSE) +  theme(aspect.ratio = 1) + labs(x = NULL, y = NULL) + coord_polar()})
-    output$route_plot <- renderPlot({ggplot(data = area_map2, mapping = aes(x = inf_route2, fill = inf_route2)) + 
+  output$route_plot <- renderPlot({ggplot(data = area_map2, mapping = aes(x = inf_route2, fill = inf_route2)) + 
       geom_bar(width = 0.7, show.legend = FALSE) +  theme(aspect.ratio = 1) + labs(x = NULL, y = NULL) })
-    output$route2_plot2 <- renderPlot({ggplot(data = area_map2)  + xlab("Area") + ylab("Cumulated cases") +
+  output$route2_plot2 <- renderPlot({ggplot(data = area_map2)  + xlab("Area") + ylab("Cumulated cases") +
       geom_bar(mapping = aes(x = area_eng2, fill = inf_route2), alpha = 0.6, position = "identity")+   labs(fill = "Infection Route")})
+  output$route3_plot3 <- renderPlot({ggplot(data = area_map2, mapping = aes(x = area_eng2, fill = inf_route2)) + 
+      geom_bar(width = 1, show.legend = TRUE) +  theme(aspect.ratio = 1) + labs(x = NULL, y = NULL) + coord_polar() })
   
-  output$map <- renderLeaflet({leaflet(data=area) %>% setView(lng=126.977, lat=37.546, zoom=11) %>%
+  
+  output$map <- renderLeaflet({leaflet(data=area) %>% setView(lng=126.977, lat=37.546, zoom=10.5) %>%
                                 addTiles() %>% addProviderTiles("CartoDB.Positron") %>% 
-                                addCircles(lng = ~lng, lat=~lat, popup = ~cases, color = ~dif_color(cases)) %>%  addMiniMap()})
+                                addMarkers(lng = ~lng, lat=~lat, clusterOptions = markerClusterOptions(),
+                                           popup = paste(area$area_eng, "<br>" ,"cases: ", area$cases)) %>%  addMiniMap()})
+  output$map2 <- renderLeaflet({leaflet(data=area) %>% setView(lng=126.977, lat=37.546, zoom=10.5) %>%
+                                addTiles() %>%  
+                                addMarkers(lng = ~lng, lat=~lat,  
+                                           popup = paste(area$area_eng)) %>%  addMiniMap()})
   output$map_hosp <- renderLeaflet({leaflet(data=area_map_약국) %>%  setView(lng=126.977, lat=37.546, zoom=11) %>%
                                       addTiles() %>% addProviderTiles("CartoDB.Positron") %>%  
                                       addCircles(lng = ~lng, lat=~lat) %>% addMiniMap() %>%
